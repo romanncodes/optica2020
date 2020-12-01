@@ -5,6 +5,9 @@ new Vue({
     url: "http://localhost/Optica_2020/",
     cliente: {},
     esta: false,
+    //datos del combobox
+    id_material_cristal: "",
+    materiales: [],
   },
   methods: {
     buscar: async function () {
@@ -30,6 +33,20 @@ new Vue({
         console.log(error);
       }
     },
+    //carga el combobox
+    cargaMateriales: async function () {
+      try {
+        var recurso = "controllers/GetMaterialesCristal.php";
+        const res = await fetch(this.url + recurso);
+        const data = await res.json();
+        this.materiales = data;
+        console.log(data);
+      } catch (error) {
+        console.log(error);
+      }
+    },
   },
-  created() {},
+  created() {
+    this.cargaMateriales();
+  },
 });

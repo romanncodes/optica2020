@@ -104,7 +104,26 @@
 
                     </div>
                 </div>
+
+
+
+
+                <div class="row">
+                    <div class="col l12">
+                        <div class="card-panel">
+                            <select v-model="id_material_cristal" class="browser-default">
+                                <option v-for="m in materiales" :value="m.id_material_cristal">
+                                    {{m.material_cristal}}
+                                </option>
+                            </select>
+                            <pre>
+                            {{$data}}
+                            </pre>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!--- end VUEJS BUSCAR-->
 
 
         <?php } else { ?>
@@ -141,6 +160,7 @@
         </script>
 
         <script src="../../js/buscar_cliente.js"></script>
+        <script src="../../js/cbo.js"></script>
 </body>
 
 </html>
