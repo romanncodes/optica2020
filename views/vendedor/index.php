@@ -76,12 +76,35 @@
                     <a href="#!" class="secondary-content tooltipped" data-position="bottom" data-tooltip="Cambiar mi clave">
                         <i class=" material-icons">build</i>
                     </a>
-
                 </li>
             </ul>
 
+            <div id="app" class="card-panel">
+                <div class="row">
+                    <div class="col l4 m12 s12">
+                        <form @submit.prevent="buscar">
+                            <input type="text" v-model="rut">
+                            <button class="btn-small lowerCase">
+                                buscar
+                            </button>
+                        </form>
+                        <p>
+                            {{rut}}
+                        </p>
+                    </div>
+                    <div class="col l8 m12 s12">
+                        <p>
+                            <ul v-if="esta" class="collection">
+                                <li class="collection-item">{{cliente.nombre_cliente}}</li>
+                                <li class="collection-item">{{cliente.direccion_cliente}}</li>
+                                <li class="collection-item">{{cliente.telefono_cliente}}</li>
+                                <li class="collection-item">{{cliente.email_cliente}}</li>
+                            </ul>
+                        </p>
 
-
+                    </div>
+                </div>
+            </div>
 
 
         <?php } else { ?>
@@ -117,7 +140,7 @@
             });
         </script>
 
-        <script src="../../js/admin.js"></script>
+        <script src="../../js/buscar_cliente.js"></script>
 </body>
 
 </html>
