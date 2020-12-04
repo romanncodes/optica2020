@@ -31,7 +31,7 @@
                 </a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li class="active"><a href="#">Crear Cliente <i class="material-icons left">assignment_ind</i></a></li>
-                    <li><a href="#">Buscar Recetas <i class="material-icons left">search</i></a></li>
+                    <li><a href="buscar_receta.php">Buscar Recetas <i class="material-icons left">search</i></a></li>
                     <li><a href="#">Receta <i class="material-icons left">playlist_add</i></a></li>
                     <!-- MENU DROPDOWN
                     <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Receta <i class="material-icons left">playlist_add</i></a></li>
@@ -54,7 +54,7 @@
                 </div>
             </li>
             <li class="active"><a href="#">Crear Cliente <i class="material-icons left">assignment_ind</i></a></li>
-            <li><a href="#">Buscar Recetas <i class="material-icons left">search</i></a></li>
+            <li><a href="buscar_receta.php">Buscar Recetas <i class="material-icons left">search</i></a></li>
             <li><a href="#">Crear Receta <i class="material-icons left">playlist_add</i></a></li>
             <li>
                 <div class="divider"></div>
@@ -160,7 +160,7 @@
         </script>
 
         <script src="../../js/buscar_cliente.js"></script>
-        <script src="../../js/cbo.js"></script>
+
 </body>
 
 </html>
