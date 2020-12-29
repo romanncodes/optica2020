@@ -23,11 +23,17 @@ new Vue({
         console.log(error);
       }
     },
+
     abrirModal: function (receta) {
       this.receta = receta;
       var modal = document.getElementById("modal1");
       var instance = M.Modal.getInstance(modal);
       instance.open();
+    },
+
+    generarPDF: function (id) {
+      //alert(id);
+      window.open(this.url + "controllers/ExportarPDF.php?id=" + id, "_blank");
     },
   },
   created() {},

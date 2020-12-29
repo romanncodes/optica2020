@@ -1,3 +1,6 @@
 .lowerCase {
   text-transform: capitalize;
 }
+.pdf {
+  cursor: pointer;
+}

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <link rel="stylesheet" href="../../css/style.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/style.css" />
 </head>
 
 <body class="green">
@@ -72,7 +72,7 @@
                         <h4>Buscar receta</h4>
                         <form @submit.prevent="buscarRut">
                             <input type="text" v-model="rut" placeholder="Rut" />
-                            <button class="btn-small">buscar</button>
+                            <button class="btn-small lowerCase">buscar</button>
                         </form>
 
 
@@ -92,12 +92,14 @@
                                 <td>{{r.nombre_cliente}}</td>
                                 <td>{{r.fecha_entrega}}</td>
                                 <td>
-                                    <button @click="abrirModal(r)" class="btn-small blue">
+                                    <button @click="abrirModal(r)" class="btn-small blue lowerCase">
                                         detalle
                                     </button>
                                 </td>
                                 <td>
-                                    <img height="30" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/1200px-PDF_file_icon.svg.png" alt="">
+                                    <div class="pdf">
+                                        <img @click="generarPDF(r.id)" height="30" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/1200px-PDF_file_icon.svg.png" alt="">
+                                    </div>
                                 </td>
                             </tr>
                         </table>
