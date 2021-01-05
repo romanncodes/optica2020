@@ -55,7 +55,7 @@
             </li>
             <li class="active"><a href="index.php">Crear Cliente <i class="material-icons left">assignment_ind</i></a></li>
             <li><a href="buscar_receta.php">Buscar Recetas <i class="material-icons left">search</i></a></li>
-            <li><a href="#">Crear Receta <i class="material-icons left">playlist_add</i></a></li>
+            <li><a href="insert_receta.php">Crear Receta <i class="material-icons left">playlist_add</i></a></li>
             <li>
                 <div class="divider"></div>
             </li>

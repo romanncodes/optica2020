@@ -32,7 +32,7 @@
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li class="active"><a href="#">Crear Cliente <i class="material-icons left">assignment_ind</i></a></li>
                     <li><a href="buscar_receta.php">Buscar Recetas <i class="material-icons left">search</i></a></li>
-                    <li><a href="#">Receta <i class="material-icons left">playlist_add</i></a></li>
+                    <li><a href="insert_receta.php">Receta <i class="material-icons left">playlist_add</i></a></li>
                     <!-- MENU DROPDOWN
                     <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Receta <i class="material-icons left">playlist_add</i></a></li>
                      -->
@@ -94,12 +94,12 @@
                     </div>
                     <div class="col l8 m12 s12">
                         <p>
-                            <ul v-if="esta" class="collection">
-                                <li class="collection-item">{{cliente.nombre_cliente}}</li>
-                                <li class="collection-item">{{cliente.direccion_cliente}}</li>
-                                <li class="collection-item">{{cliente.telefono_cliente}}</li>
-                                <li class="collection-item">{{cliente.email_cliente}}</li>
-                            </ul>
+                        <ul v-if="esta" class="collection">
+                            <li class="collection-item">{{cliente.nombre_cliente}}</li>
+                            <li class="collection-item">{{cliente.direccion_cliente}}</li>
+                            <li class="collection-item">{{cliente.telefono_cliente}}</li>
+                            <li class="collection-item">{{cliente.email_cliente}}</li>
+                        </ul>
                         </p>
 
                     </div>
@@ -107,21 +107,60 @@
 
 
 
+                <!-- CARGA COMBOBOX -->
+                <form @submit.prevent="guardar()">
+                    <div class="row">
+                        <div class="col l12">
+                            <div class="card-panel">
+                                <select v-model="id_material_cristal" class="browser-default">
+                                    <option v-for="m in materiales" :value="m.id_material_cristal">
+                                        {{m.material_cristal}}
+                                    </option>
+                                </select>
 
-                <div class="row">
-                    <div class="col l12">
-                        <div class="card-panel">
-                            <select v-model="id_material_cristal" class="browser-default">
-                                <option v-for="m in materiales" :value="m.id_material_cristal">
-                                    {{m.material_cristal}}
-                                </option>
-                            </select>
-                            <pre>
-                            {{$data}}
-                            </pre>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <!-- CALENDARIO-->
+                    <div class="row">
+                        <div class="col l4">
+                            <input type="text" v-model="fecha_entrega" class="datepicker" placeholder="fecha">
+                        </div>
+                        <div class="col l4">
+                            <select v-model="base" class="browser-default">
+                                <option value="No Aplica">No Aplica</option>
+                                <option value="Superior">Superior</option>
+                                <option value="Inferior">Inferior</option>
+                                <option value="Interna">Interna</option>
+                                <option value="Externa">Externa</option>
+
+                            </select>
+                        </div>
+                        <div class="col l4">
+                            <select v-model="prisma" class="browser-default">
+                                <option value="0">No Aplica</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col l4">
+
+                            <input type="text" v-model="eje_oi" required pattern="[+-]+[0-9].[0-9]{2,2}" title="Ejemplo +0.25 ó -0.25">
+                        </div>
+                    </div>
+
+                    <button>Guardar</button>
+                    <pre>
+                    {{$data}}
+                    </pre>
+                </form>
             </div>
             <!--- end VUEJS BUSCAR-->
 
@@ -155,6 +194,9 @@
                     belowOrigin: true
                 });
                 */
+                //CALENDARIO
+                var elems = document.querySelectorAll('.datepicker');
+                var instances = M.Datepicker.init(elems, {});
 
             });
         </script>

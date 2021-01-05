@@ -5,11 +5,18 @@ new Vue({
     url: "http://localhost/Optica_2020/",
     cliente: {},
     esta: false,
+    fecha_entrega: "",
+    base: "No Aplica",
+    prisma: 0,
     //datos del combobox
     id_material_cristal: "",
+    eje_oi: "",
     materiales: [],
   },
   methods: {
+    guardar: function () {
+      alert("hola");
+    },
     buscar: async function () {
       const recurso = "controllers/BuscarCliente.php";
       var form = new FormData();
