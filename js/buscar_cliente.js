@@ -10,7 +10,7 @@ new Vue({
     prisma: 0,
     //datos del combobox
     id_material_cristal: "",
-    eje_oi: "",
+    esfera_oi: "",
     materiales: [],
   },
   methods: {

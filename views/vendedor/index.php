@@ -152,7 +152,7 @@
                     <div class="row">
                         <div class="col l4">
 
-                            <input type="text" v-model="eje_oi" required pattern="[+-]+[0-9].[0-9]{2,2}" title="Ejemplo +0.25 ó -0.25">
+                            <input type="text" v-model="esfera_oi" required pattern="[+-]+[0-9].[0-9]{2,2}" title="Ejemplo +0.25 ó -0.25">
                         </div>
                     </div>
 
